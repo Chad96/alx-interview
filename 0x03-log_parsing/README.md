@@ -1,16 +1,15 @@
-
 Curriculum
 Short Specializations
 Average: 115.45%
 0x03. Log Parsing
 Algorithm
 Python
- Weight: 1
- Ongoing second chance project - started Jul 15, 2024 6:00 AM, must end by Jul 22, 2024 6:00 AM
- An auto review will be launched at the deadline
+Weight: 1
+Ongoing second chance project - started Jul 15, 2024 6:00 AM, must end by Jul 22, 2024 6:00 AM
+An auto review will be launched at the deadline
 In a nutshell…
 Auto QA review: 0.0/11 mandatory
-Altogether:  0.0%
+Altogether: 0.0%
 Mandatory: 0.0%
 Optional: no optional tasks
 For the “0x03. Log Parsing” project, you will need to apply your knowledge of Python programming, focusing on parsing and processing data streams in real-time. This project involves reading from standard input (stdin), handling data in a specific format, and performing calculations based on the input data. Here’s a list of concepts and resources that you might find useful:
@@ -54,8 +53,7 @@ A README.md file, at the root of the folder of the project, is mandatory
 Your code should use the PEP 8 style (version 1.7.x)
 All your files must be executable
 The length of your files will be tested using wc
-Tasks
-0. Log parsing
+Tasks 0. Log parsing
 mandatory
 Score: 0.0% (Checks completed: 0.0%)
 Write a script that reads stdin line by line and computes metrics:
@@ -79,16 +77,16 @@ from time import sleep
 import datetime
 
 for i in range(10000):
-    sleep(random.random())
-    sys.stdout.write("{:d}.{:d}.{:d}.{:d} - [{}] \"GET /projects/260 HTTP/1.1\" {} {}\n".format(
-        random.randint(1, 255), random.randint(1, 255), random.randint(1, 255), random.randint(1, 255),
-        datetime.datetime.now(),
-        random.choice([200, 301, 400, 401, 403, 404, 405, 500]),
-        random.randint(1, 1024)
-    ))
-    sys.stdout.flush()
+sleep(random.random())
+sys.stdout.write("{:d}.{:d}.{:d}.{:d} - [{}] \"GET /projects/260 HTTP/1.1\" {} {}\n".format(
+random.randint(1, 255), random.randint(1, 255), random.randint(1, 255), random.randint(1, 255),
+datetime.datetime.now(),
+random.choice([200, 301, 400, 401, 403, 404, 405, 500]),
+random.randint(1, 1024)
+))
+sys.stdout.flush()
 
-alexa@ubuntu:~/0x03-log_parsing$ ./0-generator.py | ./0-stats.py 
+alexa@ubuntu:~/0x03-log_parsing$ ./0-generator.py | ./0-stats.py
 File size: 5213
 200: 2
 401: 1
@@ -124,18 +122,18 @@ File size: 16305
 405: 4
 500: 4
 Traceback (most recent call last):
-  File "./0-stats.py", line 15, in <module>
+File "./0-stats.py", line 15, in <module>
 Traceback (most recent call last):
-  File "./0-generator.py", line 8, in <module>
-    for line in sys.stdin:
+File "./0-generator.py", line 8, in <module>
+for line in sys.stdin:
 KeyboardInterrupt
-    sleep(random.random())
+sleep(random.random())
 KeyboardInterrupt
-alexa@ubuntu:~/0x03-log_parsing$ 
+alexa@ubuntu:~/0x03-log_parsing$
 Repo:
 
 GitHub repository: alx-interview
 Directory: 0x03-log_parsing
 File: 0-stats.py
-  
+
 Copyright © 2024 ALX, All rights reserved.
