@@ -1,0 +1,1 @@
+Rotating a 2D matrix involves changing the orientation of the matrix by 90 degrees clockwise or counterclockwise. Each element in the matrix is moved to a new position based on the desired rotation direction.
