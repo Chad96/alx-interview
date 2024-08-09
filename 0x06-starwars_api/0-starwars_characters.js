@@ -3,25 +3,29 @@
 const request = require('request');
 
 const movieId = process.argv[2];
-const apiUrl = `https://swapi-api.hbtn.io/api/films/${movieId}/`;
+const movieEndpoint = 'https://swapi-api.alx-tools.com/api/films/' + movieId;
 
-request(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error('Error fetching movie:', error);
+function sendRequest (characterList, index) {
+  if (characterList.length === index) {
     return;
   }
 
-  const data = JSON.parse(body);
-  const characters = data.characters;
-
-  characters.forEach(url => {
-    request(url, (error, response, body) => { // Changed response to request
-      if (error) {
-        console.error('Error fetching character:', error);
-        return;
-      }
-      const characterData = JSON.parse(body);
-      console.log(characterData.name);
-    });
+  request(characterList[index], (error, response, body) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(JSON.parse(body).name);
+      sendRequest(characterList, index + 1);
+    }
   });
+}
+
+request(movieEndpoint, (error, response, body) => {
+  if (error) {
+    console.log(error);
+  } else {
+    const characterList = JSON.parse(body).characters;
+
+    sendRequest(characterList, 0);
+  }
 });
